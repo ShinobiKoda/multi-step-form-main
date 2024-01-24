@@ -80,6 +80,7 @@ main{
    text-align: center;
 
    margin-top: -7rem;
+   transition: all 0.5s;
 }
 
 .nav__button:hover{
