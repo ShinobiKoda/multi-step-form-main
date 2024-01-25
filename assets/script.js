@@ -105,3 +105,15 @@ next_page.addEventListener('click', ()=>{
     personal_info.classList.remove('none');
   }
 });
+
+//=== add borders to the plans when clicked ======//
+const plans = document.querySelectorAll('.plan');
+plans.forEach(plan => {
+  plan.onclick = () => {
+    // Remove 'border' class from all plans
+    plans.forEach((p) => p.classList.remove("border"));
+
+    // Add 'border' class to the clicked plan
+    plan.classList.add("border");
+  };
+})
