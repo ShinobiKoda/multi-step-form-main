@@ -51,7 +51,11 @@ btn_one.onclick = () => {
     add_ons.classList.add('none');
     thanks.classList.add('none');
     finishing_up.classList.add('none');
-    console.log('clicked');
+    btn_one.classList.add('blue-background');
+    btn_two.classList.remove('blue-background');
+    btn_three.classList.remove("blue-background");
+    btn_four.classList.remove("blue-background");
+    // console.log('clicked');
   }
 }
 
@@ -61,6 +65,11 @@ btn_two.onclick = () => {
     personal_info.classList.add('none');
     thanks.classList.add('none');
     finishing_up.classList.add("none");
+    btn_two.classList.add('blue-background');
+    btn_two.classList.add("blue-background");
+    btn_one.classList.remove("blue-background");
+    btn_three.classList.remove("blue-background");
+    btn_four.classList.remove("blue-background");
   }
 }
 
@@ -70,6 +79,10 @@ btn_three.onclick = () => {
     personal_info.classList.add('none');
     add_ons.classList.add('none');
     thanks.classList.add('none');
+    btn_three.classList.add("blue-background");
+    btn_one.classList.remove("blue-background");
+    btn_two.classList.remove("blue-background");
+    btn_four.classList.remove("blue-background");
   }
 }
 
@@ -79,6 +92,10 @@ btn_four.onclick = () =>{
     personal_info.classList.add('none');
     add_ons.classList.add('none');
     finishing_up.classList.add('none');
+    btn_four.classList.add("blue-background");
+    btn_one.classList.remove("blue-background");
+    btn_two.classList.remove("blue-background");
+    btn_three.classList.remove("blue-background");
   }
 }
 
@@ -88,21 +105,29 @@ next_page.addEventListener('click', ()=>{
   if(add_ons.classList.contains('none') && finishing_up.classList.contains('none') && thanks.classList.contains('none')){
     personal_info.classList.add('none');
     add_ons.classList.remove('none');
+    btn_one.classList.remove('blue-background');
+    btn_two.classList.add('blue-background');
   }else if(personal_info.classList.contains('none') && finishing_up.classList.contains('none') && thanks.classList.contains('none')){
     add_ons.classList.add('none');
     finishing_up.classList.remove('none');
+    btn_two.classList.remove("blue-background");
+    btn_three.classList.add('blue-background');
   }else if (personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
     thanks.classList.contains("none")
   ){
     finishing_up.classList.add('none');
     thanks.classList.remove('none');
+    btn_three.classList.remove("blue-background");
+    btn_four.classList.add("blue-background");
   }else if(personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
     finishing_up.classList.contains("none")
   ){
     thanks.classList.add('none');
     personal_info.classList.remove('none');
+    btn_four.classList.remove("blue-background");
+    btn_one.classList.add('blue-background');
   }
 });
 
@@ -116,4 +141,17 @@ plans.forEach(plan => {
     // Add 'border' class to the clicked plan
     plan.classList.add("border");
   };
-})
+});
+
+// ==== add borders to input when clicked =========
+const inputs = document.querySelectorAll('.input');
+
+inputs.forEach(input => {
+  input.onclick = () => {
+    inputs.forEach((i) => i.classList.remove('border'));
+
+    input.classList.add('border');
+    console.log('i');
+  }
+
+});

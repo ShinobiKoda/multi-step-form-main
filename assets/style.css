@@ -63,9 +63,17 @@ button{
 
 main{
    font-family: 'Ubuntu', sans-serif;
-   
 }
 /* ===== buttons for navigation to different forms ======*/
+
+.nav__btn{
+   margin-top: -7rem;
+}
+
+.nav_detail{
+   display: none;
+}
+
 .nav__button{
    border-radius: 50%;
    width: 35px;
@@ -79,16 +87,8 @@ main{
    font-size: 1.2em;
    text-align: center;
 
-   margin-top: -7rem;
    transition: all 0.5s;
 }
-
-.nav__button:hover{
-   background-color: var(--white);
-   color: #000;
-   
-}
-
 
 /*===== form =======*/
 
@@ -389,4 +389,118 @@ main{
 
 .none{
    display: none;
+}
+
+.blue-background{
+   background-color: var(--white);
+   color: #000;
+   font-weight: 500;
+}
+
+@media screen and (min-width: 600px) {
+   body{
+      height: 100vh;
+      width: 100%;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+   
+   main{
+      margin:  0 auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+
+      height: 35rem;
+      width: 45rem;
+      padding: 1rem;
+      border-radius: 0.7rem;
+   }
+
+   .nav{
+      position: relative;
+      background-image: url(./images/bg-sidebar-desktop.svg);
+      height: 100%;
+      border-radius: 0.4rem;
+      width: 16rem;
+
+      display: flex;
+      flex-direction: column;
+      align-items: self-start;
+      justify-content: start;
+      gap: 2rem;
+
+      padding: 3rem 1rem;
+      z-index: 1;
+   }
+
+   .container{
+      height: 100%;
+      box-shadow: none;
+   }
+
+   .nav_detail{
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+   }
+
+   .nav__btn{
+      display: flex;
+      gap: 1rem;
+      text-transform: uppercase;
+      margin-top: 0;
+   }
+
+   .pastel_blue{
+      color: var(--pastel-blue);
+   }
+
+   .white{
+      color: var(--white);
+      font-weight: 500;
+   }
+
+   .next_step{
+      display: none;
+   }
+
+   .input{
+      font-weight: 700;
+      font-size: 1.1em;
+   }
+
+   .error{
+      font-size: 1.2em;
+   }
+
+   .plans{
+      margin-top: -1rem;
+      margin-left: 2rem;
+
+   }
+
+   .bills{
+      flex-direction: row;
+      margin-bottom: 2rem;
+   }
+
+   .plan{
+      flex-direction: column;
+      gap: 3rem;
+      padding-right: 3rem;
+      align-items: flex-start;
+      justify-content: left;
+   }
+
+   .form{
+      padding: 0;
+   }
 }
