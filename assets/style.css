@@ -419,7 +419,6 @@ main{
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 
       height: 35rem;
-      width: 45rem;
       padding: 1rem;
       border-radius: 0.7rem;
    }
@@ -502,5 +501,9 @@ main{
 
    .form{
       padding: 0;
+   }
+
+   .thanks{
+      width: 25rem;
    }
 }
