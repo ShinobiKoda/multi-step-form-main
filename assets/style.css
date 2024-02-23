@@ -397,6 +397,10 @@ main{
    font-weight: 500;
 }
 
+.previous_btn{
+   display: none;
+}
+
 @media screen and (min-width: 600px) {
    body{
       height: 100vh;
@@ -409,18 +413,19 @@ main{
    }
    
    main{
-      margin:  0 auto;
 
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 5rem;
 
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
 
       height: 35rem;
-      padding: 1rem;
+      padding: 2rem;
       border-radius: 0.7rem;
+
+      position: relative;
    }
 
    .nav{
@@ -467,10 +472,6 @@ main{
       font-weight: 500;
    }
 
-   .next_step{
-      display: none;
-   }
-
    .input{
       font-weight: 700;
       font-size: 1.1em;
@@ -481,9 +482,7 @@ main{
    }
 
    .plans{
-      margin-top: -1rem;
-      margin-left: 2rem;
-
+      margin-top: 5rem;
    }
 
    .bills{
@@ -505,5 +504,47 @@ main{
 
    .thanks{
       width: 25rem;
+   }
+
+   .finishing_container{
+      margin-top: -3.5rem;
+   }
+
+   .previous_btn{
+      display: flex;
+   }
+
+   .prev{
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: var(--heading-color);
+   }
+
+   .next_step{
+      margin: 0;
+      padding: 0;
+      width: 7rem;
+   }
+
+   .next{
+      padding: 0.7rem;
+   }
+
+   .page_navigation{
+      width: 26rem;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+
+
+      position: absolute;
+      bottom: 5%;
+      left: 43%;
+
+
    }
 }
