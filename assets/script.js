@@ -6,6 +6,11 @@ const yearly = document.querySelector(".monthly_billing");
 const yearText = document.querySelector(".yearly");
 const monthText = document.querySelector(".monthly");
 
+
+// grab the go back button
+const prev_btn = document.getElementById("prev");
+
+
 toggle.addEventListener("click", () => {
   if (yearly.classList.contains("none")) {
     // yearly is hidden, so show yearly and hide monthly
@@ -56,6 +61,7 @@ btn_one.onclick = () => {
     btn_two.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
+    prev_btn.style.display = 'none';
     // console.log('clicked');
   }
 };
@@ -73,6 +79,7 @@ btn_two.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
+    prev_btn.style.display = 'flex';
   }
 };
 
@@ -87,6 +94,7 @@ btn_three.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_two.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
+    prev_btn.style.display = 'flex';
   }
 };
 
@@ -101,6 +109,7 @@ btn_four.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_two.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
+    prev_btn.style.display = 'flex';
   }
 };
 
@@ -126,24 +135,11 @@ next_page.addEventListener("click", () => {
     finishing_up.classList.remove("none");
     btn_two.classList.remove("blue-background");
     btn_three.classList.add("blue-background");
-  } else if (
-    personal_info.classList.contains("none") &&
-    add_ons.classList.contains("none") &&
-    thanks.classList.contains("none")
-  ) {
+  } else{
     finishing_up.classList.add("none");
     thanks.classList.remove("none");
     btn_three.classList.remove("blue-background");
     btn_four.classList.add("blue-background");
-  } else if (
-    personal_info.classList.contains("none") &&
-    add_ons.classList.contains("none") &&
-    finishing_up.classList.contains("none")
-  ) {
-    thanks.classList.add("none");
-    personal_info.classList.remove("none");
-    btn_four.classList.remove("blue-background");
-    btn_one.classList.add("blue-background");
   }
 });
 
@@ -171,9 +167,6 @@ inputs.forEach((input) => {
   };
 });
 
-// grab the go back button
-const prev_btn = document.getElementById("prev");
-
 // confirm the current page the user is on by checking which has the display of none and moving based on that info
 
 //personal_info
@@ -181,16 +174,7 @@ const prev_btn = document.getElementById("prev");
 //finishing_up
 //thanks
 prev_btn.addEventListener("click", () => {
-  if (
-    add_ons.classList.contains("none") &&
-    finishing_up.classList.contains("none") &&
-    thanks.classList.contains("none")
-  ) {
-    thanks.classList.remove("none");
-    personal_info.classList.add("none");
-    btn_one.classList.remove("blue-background");
-    btn_four.classList.add("blue-background");
-  } else if (
+ if (
     personal_info.classList.contains("none") &&
     finishing_up.classList.contains("none") &&
     thanks.classList.contains("none")
@@ -221,3 +205,32 @@ prev_btn.addEventListener("click", () => {
 
   // console.log('gojo')
 });
+
+//hide the prev button on page one
+next_page.onclick = () => {
+  if (
+    personal_info.classList.contains("none") &&
+    finishing_up.classList.contains("none") &&
+    thanks.classList.contains("none")
+  ) {
+    prev_btn.style.display = 'flex';
+    next_page.classList.remove('none');
+  } else if (
+    personal_info.classList.contains("none") &&
+    add_ons.classList.contains("none") &&
+    thanks.classList.contains("none")
+  ) {
+    prev_btn.style.display = 'flex';
+    next_page.classList.remove('none');
+  } else if (
+    personal_info.classList.contains("none") &&
+    add_ons.classList.contains("none") &&
+    finishing_up.classList.contains("none")
+  ) {
+    prev_btn.style.display = 'flex';
+    next_page.classList.add('none');
+  }else{
+    prev_btn.style.display = 'none';
+  }
+}
+

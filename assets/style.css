@@ -448,6 +448,7 @@ main{
    .container{
       height: 100%;
       box-shadow: none;
+      width: 30rem;
    }
 
    .nav_detail{
@@ -502,10 +503,6 @@ main{
       padding: 0;
    }
 
-   .thanks{
-      width: 25rem;
-   }
-
    .finishing_container{
       margin-top: -3.5rem;
    }
@@ -521,6 +518,7 @@ main{
       font-size: 1.2em;
       font-weight: 700;
       color: var(--heading-color);
+      display: none;
    }
 
    .next_step{
@@ -536,7 +534,7 @@ main{
    .page_navigation{
       width: 26rem;
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
       align-items: center;
       justify-content: space-between;
 
