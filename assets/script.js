@@ -62,7 +62,7 @@ btn_one.onclick = () => {
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
     prev_btn.style.display = 'none';
-    // console.log('clicked');
+    next_page.style.display = 'flex';
   }
 };
 
@@ -80,6 +80,7 @@ btn_two.onclick = () => {
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
     prev_btn.style.display = 'flex';
+    next_page.style.display = 'flex';
   }
 };
 
@@ -95,6 +96,7 @@ btn_three.onclick = () => {
     btn_two.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
     prev_btn.style.display = 'flex';
+    next_page.style.display = 'flex';
   }
 };
 
@@ -110,6 +112,7 @@ btn_four.onclick = () => {
     btn_two.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
     prev_btn.style.display = 'flex';
+    next_page.style.display = 'none';
   }
 };
 
@@ -183,6 +186,7 @@ prev_btn.addEventListener("click", () => {
     add_ons.classList.add("none");
     btn_two.classList.remove("blue-background");
     btn_one.classList.add("blue-background");
+    prev_btn.style.display = 'none';
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
@@ -192,6 +196,7 @@ prev_btn.addEventListener("click", () => {
     finishing_up.classList.add("none");
     btn_three.classList.remove("blue-background");
     btn_two.classList.add("blue-background");
+    next_page.style.display = 'flex';
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
@@ -201,6 +206,7 @@ prev_btn.addEventListener("click", () => {
     thanks.classList.add("none");
     btn_four.classList.remove("blue-background");
     btn_three.classList.add("blue-background");
+    next_page.style.display = 'flex';
   }
 
   // console.log('gojo')
