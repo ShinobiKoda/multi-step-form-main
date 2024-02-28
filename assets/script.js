@@ -6,10 +6,13 @@ const yearly = document.querySelector(".monthly_billing");
 const yearText = document.querySelector(".yearly");
 const monthText = document.querySelector(".monthly");
 
-
 // grab the go back button
 const prev_btn = document.getElementById("prev");
 
+// grab the confirm button
+const submit_btn = document.querySelector(".submit_btn");
+const arigato = document.querySelector(".arigato");
+const confirm_page = document.querySelector(".confirm_page");
 
 toggle.addEventListener("click", () => {
   if (yearly.classList.contains("none")) {
@@ -48,6 +51,7 @@ const personal_info = document.getElementById("personal__info");
 const add_ons = document.getElementById("add__ons");
 const finishing_up = document.getElementById("finishing__up");
 const thanks = document.getElementById("thanks__page");
+const pick_addons = document.querySelector(".pick_addons");
 
 // when i click on button one and it has a display of none meaning it's not displayed i want you to remove the display of none and add it to other pages
 
@@ -61,8 +65,11 @@ btn_one.onclick = () => {
     btn_two.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
-    prev_btn.style.display = 'none';
-    next_page.style.display = 'flex';
+    prev_btn.style.display = "none";
+    next_page.style.display = "flex";
+    submit_btn.style.display = "none";
+    arigato.style.display = 'none';
+    confirm_page.style.display = 'flex';
   }
 };
 
@@ -79,12 +86,16 @@ btn_two.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
-    prev_btn.style.display = 'flex';
-    next_page.style.display = 'flex';
+    prev_btn.style.display = "flex";
+    next_page.style.display = "flex";
+    submit_btn.style.display = "none";
+    arigato.style.display = 'none';
+    confirm_page.style.display = 'flex';
   }
 };
 
 // when i click on button three and it has a display of none meaning it's not displayed i want you to remove the display of none and add it to other pages
+
 btn_three.onclick = () => {
   if (finishing_up.classList.contains("none")) {
     finishing_up.classList.remove("none");
@@ -95,8 +106,11 @@ btn_three.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_two.classList.remove("blue-background");
     btn_four.classList.remove("blue-background");
-    prev_btn.style.display = 'flex';
-    next_page.style.display = 'flex';
+    prev_btn.style.display = "flex";
+    next_page.style.display = "flex";
+    submit_btn.style.display = "none";
+    arigato.style.display = 'none';
+    confirm_page.style.display = 'flex';
   }
 };
 
@@ -111,8 +125,11 @@ btn_four.onclick = () => {
     btn_one.classList.remove("blue-background");
     btn_two.classList.remove("blue-background");
     btn_three.classList.remove("blue-background");
-    prev_btn.style.display = 'flex';
-    next_page.style.display = 'none';
+    prev_btn.style.display = "flex";
+    submit_btn.style.display = "none";
+    next_page.style.display = "none";
+    arigato.style.display = 'block';
+    confirm_page.style.display = 'none';
   }
 };
 
@@ -129,6 +146,9 @@ next_page.addEventListener("click", () => {
     add_ons.classList.remove("none");
     btn_one.classList.remove("blue-background");
     btn_two.classList.add("blue-background");
+    submit_btn.style.display = "none";
+    arigato.style.display = 'none';
+    confirm_page.style.display = 'flex';
   } else if (
     personal_info.classList.contains("none") &&
     finishing_up.classList.contains("none") &&
@@ -138,11 +158,19 @@ next_page.addEventListener("click", () => {
     finishing_up.classList.remove("none");
     btn_two.classList.remove("blue-background");
     btn_three.classList.add("blue-background");
-  } else{
+    submit_btn.style.display = "none";
+    arigato.style.display = 'none';
+    confirm_page.style.display = 'flex';
+  } else {
     finishing_up.classList.add("none");
     thanks.classList.remove("none");
     btn_three.classList.remove("blue-background");
     btn_four.classList.add("blue-background");
+    submit_btn.style.display = "none";
+    next_page.style.display = "none";
+    arigato.style.display = 'block';
+    confirm_page.style.display = 'none';
+
   }
 });
 
@@ -152,9 +180,11 @@ plans.forEach((plan) => {
   plan.onclick = () => {
     // Remove 'border' class from all plans
     plans.forEach((p) => p.classList.remove("border"));
+    plans.forEach((p) => p.classList.remove("bg"));
 
     // Add 'border' class to the clicked plan
     plan.classList.add("border");
+    plan.classList.add("bg");
   };
 });
 
@@ -177,7 +207,7 @@ inputs.forEach((input) => {
 //finishing_up
 //thanks
 prev_btn.addEventListener("click", () => {
- if (
+  if (
     personal_info.classList.contains("none") &&
     finishing_up.classList.contains("none") &&
     thanks.classList.contains("none")
@@ -186,7 +216,8 @@ prev_btn.addEventListener("click", () => {
     add_ons.classList.add("none");
     btn_two.classList.remove("blue-background");
     btn_one.classList.add("blue-background");
-    prev_btn.style.display = 'none';
+    prev_btn.style.display = "none";
+    submit_btn.style.display = "none";
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
@@ -196,7 +227,8 @@ prev_btn.addEventListener("click", () => {
     finishing_up.classList.add("none");
     btn_three.classList.remove("blue-background");
     btn_two.classList.add("blue-background");
-    next_page.style.display = 'flex';
+    next_page.style.display = "flex";
+    submit_btn.style.display = "none";
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
@@ -206,7 +238,8 @@ prev_btn.addEventListener("click", () => {
     thanks.classList.add("none");
     btn_four.classList.remove("blue-background");
     btn_three.classList.add("blue-background");
-    next_page.style.display = 'flex';
+    next_page.style.display = "flex";
+    submit_btn.style.display = "none";
   }
 
   // console.log('gojo')
@@ -219,24 +252,43 @@ next_page.onclick = () => {
     finishing_up.classList.contains("none") &&
     thanks.classList.contains("none")
   ) {
-    prev_btn.style.display = 'flex';
-    next_page.classList.remove('none');
+    prev_btn.style.display = "flex";
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
     thanks.classList.contains("none")
   ) {
-    prev_btn.style.display = 'flex';
-    next_page.classList.remove('none');
+    prev_btn.style.display = "flex";
   } else if (
     personal_info.classList.contains("none") &&
     add_ons.classList.contains("none") &&
     finishing_up.classList.contains("none")
   ) {
-    prev_btn.style.display = 'flex';
-    next_page.classList.add('none');
-  }else{
-    prev_btn.style.display = 'none';
+    prev_btn.style.display = "flex";
+    next_page.classList.add("none");
+  } else {
+    prev_btn.style.display = "none";
   }
-}
+};
 
+document.querySelectorAll(".dlc").forEach((checkbox) => {
+  checkbox.addEventListener("change", () => {
+    // Directly toggle the highlight classes based on the checkbox's checked state
+    if (checkbox.checked) {
+      // Add "bg" and "border" classes to this checkbox's parent box
+      checkbox.parentElement.classList.add("bg", "pc_border");
+    } else {
+      // Remove "bg" and "border" classes from this checkbox's parent box
+      checkbox.parentElement.classList.remove("bg", "pc_border");
+    }
+  });
+});
+
+
+
+submit_btn.addEventListener("click", () => {
+  arigato.style.display = "block";
+  confirm_page.style.display = "none";
+  submit_btn.style.display = 'none';
+  prev_btn.style.display = 'none';
+});

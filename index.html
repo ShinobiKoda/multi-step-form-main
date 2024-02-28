@@ -280,18 +280,89 @@
               </div>
             </div>
           </div>
+
+          <div class="pick_addons container">
+            <h2 class="form_heading heading-color">Pick add-ons</h2>
+            <p class="form_subtitle">
+              Add-ons help enhance your gaming experience.
+            </p>
+
+            <div class="checkbox_container">
+              <div class="add_ons">
+                <input type="checkbox" name="dlc" id="dlc" class="dlc" />
+                <div class="addon_info">
+                  <p class="heading-color pc_heading">Online Service</p>
+                  <p class="sub-color pc_sub">Access to multiplayer games</p>
+                </div>
+                <p class="price_pc">+$1/mo</p>
+              </div>
+              <div class="add_ons">
+                <input type="checkbox" name="dlc" id="dlc" class="dlc" />
+                <div class="fix">
+                  <p class="heading-color pc_heading">Larger storage</p>
+                  <p class="sub-color pc_sub">Extra 1TB of cloud save</p>
+                </div>
+                <p class="price_pc">+$2/mo</p>
+              </div>
+              <div class="add_ons">
+                <input type="checkbox" name="dlc" id="dlc" class="dlc" />
+                <div class="addon_info">
+                  <p class="heading-color pc_heading">Customizable profile</p>
+                  <p class="sub-color pc_sub">Custom theme on your profile</p>
+                </div>
+                <p class="price_pc">+$2/mo</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- ==== thank you page ======= -->
         <div class="thanks container none" id="thanks__page">
-          <div class="img">
-            <img src="./assets/images/icon-thank-you.svg" alt />
+          <div class="arigato">
+            <div class="img">
+              <img src="./assets/images/icon-thank-you.svg" alt />
+            </div>
+            <h3 class="heading-color">Thank you!</h3>
+            <div class="note sub-color">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </div>
           </div>
-          <h3 class="heading-color">Thank you!</h3>
-          <div class="note sub-color">
-            Thanks for confirming your subscription! We hope you have fun using
-            our platform. If you ever need support, please feel free to email us
-            at support@loremgaming.com.
+
+          <div class="confirm_page container final_details">
+            <p class=" form_heading heading-color heading_summary">Finishing up</p>
+            <p class="form_subtitle heading_sub">Double-check everything looks OK before confirming.</p>
+
+            <div class="confirm picked">
+              <div class="pc_arcade change">
+                <div class="change_details">
+                  <p class="heading-color">Arcade(Monthly)</p>
+                  <button class="change_picked">Change</button>
+                </div>
+                <span class="heading-color bold">$9/mo</span>
+              </div>
+
+              <div class="services">
+                <div class="online_service service">
+                  <p class="sub-color">Online service</p>
+                  <span class="heading-color">+$1/mo</span>
+                </div>
+
+                <div class="local_storage">
+                  <div class="storage service">
+                    <p class="sub-color">Local storage</p>
+                    <span class="heading-color">+$2/mo</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="total">
+                <p class="sub-color">Total(per month)</p>
+                <span class="blue">+$12/mo</span>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -302,10 +373,11 @@
           <button class="prev" id="prev">Go back</button>
         </div>
         <div class="next_step">
-          <button
-            class="next">
-            Next Step
-          </button>
+          <button class="next">Next Step</button>
+        </div>
+
+        <div class="submit_btn">
+          <button class="submit">Confirm</button>
         </div>
       </div>
     </main>
